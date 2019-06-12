@@ -1,0 +1,13 @@
+<h2>Nuevas Tareas</h2>
+
+<%= form_with model: @todos, local: true do |f| %>
+  <%= f.label :descripcion %>:
+  <%= f.text_area :description %><br />
+
+  <%= f.label :completado? %>:
+  <%= f.check_box :completed %><br />
+
+  <%= f.submit "Enviar" %>
+<% end %>
+
+<%= @todo.errors %>
