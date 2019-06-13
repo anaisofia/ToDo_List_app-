@@ -1,14 +1,18 @@
 
 <h5><%= link_to 'Crear nueva ToDo', todos_new_path %></h5>
 
-<div class="card">
-  <div class="card-body">
-    <% @todos.each do |todo| %>
-      <h2><%=todo.description%></h2>
-      <p>Estatus Tarea: <%=todo.completed%></p>
-      <p><%= link_to 'Ver Tarea', todo_path(todo) %></p>
-      <p><%= link_to 'Editar Tarea', edit_todo_path(todo) %></p>
-      <p><%= link_to 'Eliminar Tarea', todo, method: :delete%></p>
-    <% end %>
+<div class="row">
+  <% @todos.each do |todo| %>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> Tarea N°: <%= todo.id%> </h5>
+        <p class="card-text"><%=todo.description%></p>
+        <button type="button" class="btn btn-light"><%= link_to 'Ver Tarea', todo_path(todo) %></button>
+        <button type="button" class="btn btn-light"><%= link_to 'Editar Tarea', edit_todo_path(todo) %></button>
+        <button type="button" class="btn btn-light"><%= link_to 'Eliminar Tarea', todo, method: :delete%></button>
+      </div>
+    </div>
   </div>
+  <% end %>
 </div>
