@@ -1,4 +1,4 @@
-<h2>Nuevas Tareas</h2>
+<h2>Editar Tarea</h2>
 
 <%= form_with model: @todos, local: true do |f| %>
   <%= f.label :descripcion %>:
@@ -9,5 +9,3 @@
 
   <%= f.submit "Enviar" %>
 <% end %>
-
-<%= @todos.errors %>
